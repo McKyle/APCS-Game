@@ -22,6 +22,6 @@ public abstract class Thing
     
     public String toString()
     {
-        return name + ": " + description;
+        return description + " " + name;
     }
 }

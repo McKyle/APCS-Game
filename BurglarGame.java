@@ -39,9 +39,8 @@ public class BurglarGame
                     nextMove = scan.next();
                     if (nextMove.equalsIgnoreCase("pickup"))
                     {
-                        burglar.pickUp(burglar.getLocation().getTreasure());
-                        System.out.println("You have a " + burglar.getTreasure();
-                        House.removeRoom(burglar.getLocation());
+                        burglar.pickUp(burglar.getLocation().getLoot());
+                        System.out.println("You have: " + burglar.getTreasure());
                     }
                     if (nextMove.equalsIgnoreCase("move"))
                     {
@@ -50,6 +49,7 @@ public class BurglarGame
                             "living room)");
                         nextRoom = scan.next();
                         burglar.move(nextRoom);
+                        house.removeRoom(burglar.getLocation());
                         i++;
                         secMove = (int)(Math.random()*5);
                         if (secMove == 0)

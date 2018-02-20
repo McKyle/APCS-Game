@@ -8,7 +8,7 @@ import java.util.*;
 public class House extends Thing
 {
     private static ArrayList<Room> house;
-    
+
     public House(String n, String d)
     {
         super (n, d);
@@ -24,24 +24,39 @@ public class House extends Thing
         house.add(r3);
         house.add(r4);
     }
-    
+
     public static ArrayList<Room> getHouse()
     {
         return house;
     }
-    
-    public ArrayList<Room> removeRoom(Room r)
+
+    public int removeRoom(Room r)
     {
-        //
-        if (s.equalsIgnoreCase("front hall"))
-            location = House.getHouse().get(0);
-        if (s.equalsIgnoreCase("bedroom"))
-            location = House.getHouse().get(1);
-        if (s.equalsIgnoreCase("dining room"))
-            location = House.getHouse().get(2);
-        if (s.equalsIgnoreCase("kitchen"))
-            location = House.getHouse().get(3);
-        if (s.equalsIgnoreCase("living room"))
-            location = House.getHouse().get(4);
+        if (r.equals(house.get(0)))
+        {
+            house.remove(0);
+            return 0;
+        }
+        if (r.equals(house.get(1)))
+        {
+            house.remove(1);
+            return 0;
+        }
+        if (r.equals(house.get(2)))
+        {
+            house.remove(2);
+            return 0;
+        }
+        if (r.equals(house.get(3)))
+        {
+            house.remove(3);
+            return 0;
+        }
+        if (r.equals(house.get(4)))
+        {
+            house.remove(4);
+            return 0;
+        }
+        return 0;
     }
 }

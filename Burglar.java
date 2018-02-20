@@ -21,15 +21,15 @@ public class Burglar extends Character
         for (int i = 0; i < t.size(); i++)
         {
             bag.add(t.get(i));
-            t.remove(i);
         }
     }
 
     public String getTreasure()
     {
-        for (int i = 0; i < t.size(); i++)
+        for (int i = 0; i < bag.size(); i++)
         {
-            return bag(i) + ", ";
+            return bag.get(i) + ", ";
         }
+        return "";
     }
 }

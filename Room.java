@@ -17,7 +17,8 @@ public class Room extends Thing
         super (n, d);
         roomNum = nextRoomNum;
         loot = new ArrayList<Treasure>();
-        for (int i = 0; i < (int)(Math.random()*10); i++)
+        int i2 = (int)(Math.random()*5);
+        for (int i = 0; i < i2; i++)
         {
             loot.add(new Treasure("Ring", "Diamond", 1000, 1));
         }
@@ -38,7 +39,7 @@ public class Room extends Thing
         return obstacle;
     }
     
-    public ArrayList<Treasure> getTreasure()
+    public ArrayList<Treasure> getLoot()
     {
         return loot;
     }
