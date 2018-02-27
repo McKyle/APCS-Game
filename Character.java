@@ -40,4 +40,19 @@ public abstract class Character extends Thing
     {
         return numMoves;
     }
+    
+    public String locationToString()
+    {
+        if (location.equals(House.getHouse().get(0)))
+            return "front hall";
+        if (location.equals(House.getHouse().get(1)))
+            return "bedroom";
+        if (location.equals(House.getHouse().get(2)))
+            return "dining room";
+        if (location.equals(House.getHouse().get(3)))
+            return "kitchen";
+        if (location.equals(House.getHouse().get(4)))
+            return "living room";
+        return "";
+    }
 }

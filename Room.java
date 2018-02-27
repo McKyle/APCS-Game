@@ -9,20 +9,16 @@ public class Room extends Thing
 {
     private ArrayList<Treasure> loot;
     private boolean obstacle;
-    private int roomNum;
-    private static int nextRoomNum = 0;
+    private boolean visited;
     
     public Room(String n, String d)
     {
         super (n, d);
-        roomNum = nextRoomNum;
         loot = new ArrayList<Treasure>();
-        int i2 = (int)(Math.random()*5);
-        for (int i = 0; i < i2; i++)
+        for (int i = 0; i < (Math.random()*5); i++)
         {
             loot.add(new Treasure("Ring", "Diamond", 1000, 1));
         }
-        nextRoomNum++;
     }
     
     public void createObstacle()
@@ -42,5 +38,15 @@ public class Room extends Thing
     public ArrayList<Treasure> getLoot()
     {
         return loot;
+    }
+    
+    public boolean beenVisited()
+    {
+        return visited;
+    }
+    
+    public void done()
+    {
+        visited = true;
     }
 }

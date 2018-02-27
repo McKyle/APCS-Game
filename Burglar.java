@@ -22,9 +22,12 @@ public class Burglar extends Character
     {
         for (int i = numTreasure; i < (numTreasure + t.size()); i++)
         {
-            bag.add(t.get(i));
+            int i2 = 0;
+            bag.add(t.get(i2));
+            i2++;
         }
         numTreasure += t.size() - 1;
+        this.getLocation().done();
     }
 
     public String getTreasure()
@@ -32,10 +35,15 @@ public class Burglar extends Character
         for (int i = 0; i < bag.size(); i++)
         {
             if (i == 0)
-                return "" + bag.get(i);
+                System.out.print(bag.get(i));
             if (i != 0)
-                return ", " + bag.get(i);
+                System.out.print(", " + bag.get(i));
         }
         return "";
+    }
+    
+    public ArrayList<Treasure> getBag()
+    {
+        return bag;
     }
 }
