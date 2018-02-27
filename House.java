@@ -30,33 +30,27 @@ public class House extends Thing
         return house;
     }
 
-    public int removeRoom(Room r)
+    public void removeRoom(Room r)
     {
         if (r.equals(house.get(0)))
         {
             house.remove(0);
-            return 0;
         }
         if (r.equals(house.get(1)))
         {
             house.remove(1);
-            return 0;
         }
         if (r.equals(house.get(2)))
         {
             house.remove(2);
-            return 0;
         }
         if (r.equals(house.get(3)))
         {
             house.remove(3);
-            return 0;
         }
         if (r.equals(house.get(4)))
         {
             house.remove(4);
-            return 0;
         }
-        return 0;
     }
 }

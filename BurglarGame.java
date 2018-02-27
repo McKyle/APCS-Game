@@ -5,6 +5,7 @@
  * @version 2/6/18
  */
 import java.util.*;
+//turn house into array
 public class BurglarGame
 {
     public static void main (String [] args)
