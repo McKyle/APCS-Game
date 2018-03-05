@@ -36,9 +36,9 @@ public class BurglarGame
             "$50,000, \nBags o' Gold are worth $100,000, and Diamond Rings are worth $500,000." +
             "\nYou need at least $2,000,000 to win your family back. Good luck!\n");
         while (burglar.getNumMoves() == i &&
-            s1.getLocation() != burglar.getLocation() &&
-            s2.getLocation() != burglar.getLocation() &&
-            s3.getLocation() != burglar.getLocation())
+        s1.getLocation() != burglar.getLocation() &&
+        s2.getLocation() != burglar.getLocation() &&
+        s3.getLocation() != burglar.getLocation())
         {
             System.out.print("You are in the " + burglar.getLocation().getName()
                 + ". What would you like to do? ");
@@ -137,28 +137,42 @@ public class BurglarGame
             }
             else if (nextMove.equalsIgnoreCase("leave"))
                 i++;
-            else
-                System.out.println("\nInvalid move. Please try again.");
+
+            else if (s1.getLocation() == burglar.getLocation()||
+            s2.getLocation() == burglar.getLocation()||
+            s3.getLocation() == burglar.getLocation())  
+                if (burglar.getLocation().isObstacle()){
+                    System.out.println("You are in the same room as the security! Would you like to hide behind an obstacle!... Type (Yes) or (No)");
+                    String x = scan.next();
+                    if (x.equalsIgnoreCase("Yes")){
+                        s1.move("front hall");
+                        s2.move("front hall");
+                        s3.move("front hall");
+                    } 
+
+                }
+                else
+                    System.out.println("\nInvalid move. Please try again.");     
         }
         if (s1.getLocation() == burglar.getLocation()||
-            s2.getLocation() == burglar.getLocation()||
-            s3.getLocation() == burglar.getLocation())
+        s2.getLocation() == burglar.getLocation()||
+        s3.getLocation() == burglar.getLocation())
             System.out.println("\nYou got caught. You'll be lucky if you can escape " +
                 "with your life, \nbut even if you do, you'll never see your family again.");
         if (burglar.getBag() >= 2000000 && 
-            s1.getLocation() != burglar.getLocation() &&
-            s2.getLocation() != burglar.getLocation() &&
-            s3.getLocation() != burglar.getLocation())
-            {
+        s1.getLocation() != burglar.getLocation() &&
+        s2.getLocation() != burglar.getLocation() &&
+        s3.getLocation() != burglar.getLocation())
+        {
             System.out.print("\nCongratulations! You escaped with ");
             burglar.getTreasure();
             System.out.println("\nThat's enough to put the criminal out of business and get your " +
                 "family back! You win!");
-            }
+        }
         if (burglar.getBag() <= 2000000 && 
-            s1.getLocation() != burglar.getLocation() &&
-            s2.getLocation() != burglar.getLocation() &&
-            s3.getLocation() != burglar.getLocation())
+        s1.getLocation() != burglar.getLocation() &&
+        s2.getLocation() != burglar.getLocation() &&
+        s3.getLocation() != burglar.getLocation())
             System.out.println("\nThat was a valiant effort, but unfortunately, you " +
                 "did not steal enough treasure \nto put the criminal out of business. " +
                 "You will never see your family again.");
