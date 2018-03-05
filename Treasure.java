@@ -6,21 +6,15 @@
  */
 public class Treasure extends Item{
 
-    public int value;
-    public int weight;
+    private int value;
     
-    public Treasure (String n, String d, int v, int w){
+    public Treasure (String n, String d, int v){
         super (n, d);
         value = v;
-        weight = w;
     }
 
     public int getValue(){
         return value;
-    }
-    
-    public int getWeight(){
-        return weight;
     }
 }
 

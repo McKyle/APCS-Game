@@ -28,6 +28,18 @@ public abstract class Character extends Thing
             location = House.getHouse().get(3);
         if (s.equalsIgnoreCase("living room"))
             location = House.getHouse().get(4);
+        if (s.equalsIgnoreCase("bathroom"))
+            location = House.getHouse().get(5);
+        if (s.equalsIgnoreCase("study"))
+            location = House.getHouse().get(6);
+        if (s.equalsIgnoreCase("bonus room"))
+            location = House.getHouse().get(7);
+        if (s.equalsIgnoreCase("garage"))
+            location = House.getHouse().get(8);
+        if (s.equalsIgnoreCase("laundry room"))
+            location = House.getHouse().get(9);
+        if (s.equalsIgnoreCase("basement"))
+            location = House.getHouse().get(10);
         numMoves++;
     }
 
@@ -40,7 +52,7 @@ public abstract class Character extends Thing
     {
         return numMoves;
     }
-    
+
     public String locationToString()
     {
         if (location.equals(House.getHouse().get(0)))
@@ -53,6 +65,18 @@ public abstract class Character extends Thing
             return "kitchen";
         if (location.equals(House.getHouse().get(4)))
             return "living room";
+        if (location.equals(House.getHouse().get(5)))
+            return "bathroom";
+        if (location.equals(House.getHouse().get(6)))
+            return "study";
+        if (location.equals(House.getHouse().get(7)))
+            return "bonus room";
+        if (location.equals(House.getHouse().get(8)))
+            return "garage";
+        if (location.equals(House.getHouse().get(9)))
+            return "laundry room";
+        if (location.equals(House.getHouse().get(10)))
+            return "basement";
         return "";
     }
 }
