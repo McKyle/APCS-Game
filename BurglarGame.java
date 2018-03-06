@@ -4,7 +4,7 @@
  * @author Kyle McCoy and Joseph Rosenberry
  * @version 2/6/18
  */
-//obstacle, secret room?
+//print total collected regularly, secret room?, bad room name error
 import java.util.*;
 public class BurglarGame
 {
@@ -134,25 +134,29 @@ public class BurglarGame
                     s2.move("front hall");
                     s3.move("bedroom");
                 }
+
+                if (s1.getLocation() == burglar.getLocation()||
+                s2.getLocation() == burglar.getLocation()||
+                s3.getLocation() == burglar.getLocation())  
+                {
+                    System.out.print("\nYou are about to be caught by security! " +
+                        "Will you attempt to hide? Enter \"yes\" or \"no\": ");
+                    String x = scan.nextLine();
+                    if (x.equalsIgnoreCase("Yes") && burglar.getLocation().isObstacle())
+                    {
+                        s1.move("room");
+                        s2.move("room");
+                        s3.move("room");
+                        System.out.println("\nYou successfully hid! Security has left.");
+                    }
+                    else if (!burglar.getLocation().isObstacle())
+                        System.out.println("\nThere is nothing to hide behind!");
+                }
             }
             else if (nextMove.equalsIgnoreCase("leave"))
                 i++;
-
-            else if (s1.getLocation() == burglar.getLocation()||
-            s2.getLocation() == burglar.getLocation()||
-            s3.getLocation() == burglar.getLocation())  
-                if (burglar.getLocation().isObstacle()){
-                    System.out.println("You are in the same room as the security! Would you like to hide behind an obstacle!... Type (Yes) or (No)");
-                    String x = scan.next();
-                    if (x.equalsIgnoreCase("Yes")){
-                        s1.move("front hall");
-                        s2.move("front hall");
-                        s3.move("front hall");
-                    } 
-
-                }
-                else
-                    System.out.println("\nInvalid move. Please try again.");     
+            else
+                System.out.println("\nInvalid move. Please try again.");
         }
         if (s1.getLocation() == burglar.getLocation()||
         s2.getLocation() == burglar.getLocation()||

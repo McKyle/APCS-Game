@@ -40,6 +40,8 @@ public abstract class Character extends Thing
             location = House.getHouse().get(9);
         if (s.equalsIgnoreCase("basement"))
             location = House.getHouse().get(10);
+        if (s.equalsIgnoreCase("room"))
+            location = House.getHouse().get(11);
         numMoves++;
     }
 
@@ -77,6 +79,8 @@ public abstract class Character extends Thing
             return "laundry room";
         if (location.equals(House.getHouse().get(10)))
             return "basement";
+        if (location.equals(House.getHouse().get(11)))
+            return "room";
         return "";
     }
 }

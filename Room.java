@@ -21,12 +21,6 @@ public class Room extends Thing
         Treasure t4 = new Treasure("Bag o' Gold", "", 100000);
         Treasure t5 = new Treasure("Ring", "Diamond", 500000);
 
-        int i = (int)(Math.random()*2);
-        if (i == 0)
-            obstacle = false;
-        if (i == 1)
-            obstacle = true;
-        
         int t = (int)(Math.random()*5);
         if (t == 0)
         {
@@ -48,16 +42,12 @@ public class Room extends Thing
         {
             loot.add(t5);
         }
-    }
 
-    public void createObstacle()
-    {
         int i = (int)(Math.random()*2);
         if (i == 0)
             obstacle = false;
         if (i == 1)
             obstacle = true;
-        
     }
 
     public boolean isObstacle()
